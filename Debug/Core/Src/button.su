@@ -1,0 +1,4 @@
+../Core/Src/button.c:11:13:read_raw	8	static
+../Core/Src/button.c:16:6:button_init	16	static
+../Core/Src/button.c:34:6:button_update	16	static
+../Core/Src/button.c:51:6:button_pressed_event	16	static

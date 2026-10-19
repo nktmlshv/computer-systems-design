@@ -1,0 +1,5 @@
+../Core/Src/traffic_light.c:26:17:elapsed	16	static
+../Core/Src/traffic_light.c:31:13:enter_state	16	static
+../Core/Src/traffic_light.c:59:13:on_button	24	static
+../Core/Src/traffic_light.c:83:6:traffic_light_init	8	static
+../Core/Src/traffic_light.c:89:6:traffic_light_update	16	static

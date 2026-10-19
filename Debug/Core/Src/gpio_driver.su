@@ -1,0 +1,13 @@
+../Core/Src/gpio_driver.c:4:13:is_single_pin	16	static
+../Core/Src/gpio_driver.c:9:17:pin_number	24	static
+../Core/Src/gpio_driver.c:18:13:clock_enable	24	static
+../Core/Src/gpio_driver.c:30:13:set_fields	40	static
+../Core/Src/gpio_driver.c:45:13:write_masked	24	static
+../Core/Src/gpio_driver.c:52:6:gpio_init	32	static
+../Core/Src/gpio_driver.c:81:6:gpio_get_config	32	static
+../Core/Src/gpio_driver.c:98:10:gpio_read_port	16	static
+../Core/Src/gpio_driver.c:103:10:gpio_read_pins	16	static
+../Core/Src/gpio_driver.c:108:6:gpio_read_pin	16	static
+../Core/Src/gpio_driver.c:113:6:gpio_write_pins	16	static
+../Core/Src/gpio_driver.c:118:6:gpio_write_pin	16	static
+../Core/Src/gpio_driver.c:123:6:gpio_toggle_pins	24	static
