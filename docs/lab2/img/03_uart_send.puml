@@ -1,0 +1,13 @@
+@startuml
+title uart_send()
+start
+:queued = 0;
+while (queued < length и push в TX-очередь успешен?) is (да)
+  :queued++;
+endwhile (нет)
+if (прерывания включены и queued > 0?) then (да)
+  :Критическая секция: CR1 |= TXEIE;
+endif
+:вернуть queued;
+stop
+@enduml

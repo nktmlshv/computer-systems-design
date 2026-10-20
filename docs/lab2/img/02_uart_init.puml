@@ -1,0 +1,29 @@
+@startuml
+title uart_driver_init() и uart_set_interrupts()
+start
+:Инициализировать очереди TX и RX;
+:Включить тактирование USART6;
+:Настроить PC6/PC7 как AF8;
+:CR1 = CR2 = CR3 = 0;
+:BRR = (PCLK2 + baud/2) / baud;
+:CR1 = UE | TE | RE;
+:Сбросить SR и DR;
+:Установить приоритет прерывания;
+:uart_set_interrupts(true);
+:Войти в критическую секцию;
+if (enabled?) then (да)
+  :interrupts_enabled = true;
+  :CR1 |= RXNEIE;
+  if (TX-очередь не пуста?) then (да)
+    :CR1 |= TXEIE;
+  endif
+  :NVIC_EnableIRQ;
+else (нет)
+  :interrupts_enabled = false;
+  :CR1 &= ~(RXNEIE | TXEIE);
+  :NVIC_DisableIRQ;
+  :NVIC_ClearPendingIRQ;
+endif
+:Выйти из критической секции;
+stop
+@enduml

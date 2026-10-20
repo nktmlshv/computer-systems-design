@@ -1,0 +1,32 @@
+@startuml
+title traffic_light_update()
+start
+:now = HAL_GetTick();
+if (событие кнопки и mode 1?) then (да)
+  if (состояние?) then (красный)
+    :Сократить остаток красного до quarter;
+  else (зелёный)
+    :Игнорировать;
+  endif
+  note right
+    Мигающий зелёный и жёлтый:
+    short_red_pending = true
+  end note
+endif
+if (мигающий зелёный и прошло 250 мс?) then (да)
+  :Переключить зелёный светодиод;
+endif
+if (время в состоянии >= длительности?) then (да)
+  switch (состояние)
+  case (красный)
+    :Перейти в зелёный;
+  case (зелёный)
+    :Перейти в мигающий зелёный;
+  case (мигающий зелёный)
+    :Перейти в жёлтый;
+  case (жёлтый)
+    :Перейти в красный;
+  endswitch
+endif
+stop
+@enduml

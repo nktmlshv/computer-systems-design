@@ -1,0 +1,18 @@
+@startuml
+title main()
+start
+:HAL_Init();
+:SystemClock_Config();
+:MX_GPIO_Init();
+:uart_driver_init();
+:console_init();
+:led_init();
+:button_init();
+:traffic_light_init();
+while (true)
+  :uart_driver_process();
+  :button_update();
+  :traffic_light_update();
+  :console_update();
+endwhile
+@enduml

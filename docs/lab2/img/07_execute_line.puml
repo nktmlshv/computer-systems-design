@@ -1,0 +1,40 @@
+@startuml
+title execute_line()
+start
+:Завершить строку нулём;
+:Разбить на токены по пробелам;
+if (токенов нет?) then (да)
+  stop
+endif
+if (1 токен и "?"?) then (да)
+  :Ответить: состояние, mode, timeout, I или P;
+elseif (3 токена и первый "set"?) then (да)
+  if (параметр "mode"?) then (да)
+    if (аргумент "1" или "2"?) then (да)
+      :traffic_light_set_mode();
+      :Ответ "OK";
+    else (нет)
+      :Ответ "Invalid argument";
+    endif
+  elseif (параметр "timeout"?) then (да)
+    if (число и 1..3600?) then (да)
+      :traffic_light_set_timeout_s();
+      :Ответ "OK";
+    else (нет)
+      :Ответ "Invalid argument";
+    endif
+  elseif (параметр "interrupts"?) then (да)
+    if (аргумент "on" или "off"?) then (да)
+      :uart_set_interrupts();
+      :Ответ "OK";
+    else (нет)
+      :Ответ "Invalid argument";
+    endif
+  else (нет)
+    :Ответ "Unknown command";
+  endif
+else (нет)
+  :Ответ "Unknown command";
+endif
+stop
+@enduml

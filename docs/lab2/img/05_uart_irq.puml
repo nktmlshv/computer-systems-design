@@ -1,0 +1,19 @@
+@startuml
+title UART_IRQ_HANDLER() - режим прерываний
+start
+if (SR: RXNE или ORE?) then (да)
+  :Прочитать DR (сбрасывает флаги);
+  :Зафиксировать ошибки;
+  if (RXNE и нет FE, NE, PE?) then (да)
+    :Положить байт в RX-очередь;
+  endif
+endif
+if (TXEIE включён и TXE установлен?) then (да)
+  if (в TX-очереди есть байт?) then (да)
+    :DR = байт;
+  else (нет)
+    :CR1 &= ~TXEIE;
+  endif
+endif
+stop
+@enduml
