@@ -1,5 +1,11 @@
-../Core/Src/traffic_light.c:26:17:elapsed	16	static
-../Core/Src/traffic_light.c:31:13:enter_state	16	static
-../Core/Src/traffic_light.c:59:13:on_button	24	static
-../Core/Src/traffic_light.c:83:6:traffic_light_init	8	static
-../Core/Src/traffic_light.c:89:6:traffic_light_update	16	static
+../Core/Src/traffic_light.c:36:17:quarter_of_red_ms	4	static
+../Core/Src/traffic_light.c:41:17:elapsed	16	static
+../Core/Src/traffic_light.c:46:13:enter_state	16	static
+../Core/Src/traffic_light.c:74:13:on_button	24	static
+../Core/Src/traffic_light.c:98:6:traffic_light_init	8	static
+../Core/Src/traffic_light.c:104:6:traffic_light_update	16	static
+../Core/Src/traffic_light.c:128:13:traffic_light_state_name	4	static
+../Core/Src/traffic_light.c:133:6:traffic_light_set_mode	16	static
+../Core/Src/traffic_light.c:141:22:traffic_light_get_mode	4	static
+../Core/Src/traffic_light.c:146:6:traffic_light_set_timeout_s	16	static
+../Core/Src/traffic_light.c:155:10:traffic_light_get_timeout_s	4	static

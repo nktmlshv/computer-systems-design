@@ -1,0 +1,8 @@
+../Core/Src/critical_section.h:7:24:critical_enter	16	static,ignoring_inline_asm
+../Core/Src/critical_section.h:14:20:critical_exit	24	static,ignoring_inline_asm
+../Core/Src/byte_queue.c:4:6:byte_queue_init	24	static
+../Core/Src/byte_queue.c:12:6:byte_queue_clear	24	static
+../Core/Src/byte_queue.c:20:6:byte_queue_push	32	static
+../Core/Src/byte_queue.c:36:6:byte_queue_peek	24	static
+../Core/Src/byte_queue.c:50:6:byte_queue_pop	24	static
+../Core/Src/byte_queue.c:66:10:byte_queue_count	24	static

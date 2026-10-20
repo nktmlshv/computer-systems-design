@@ -1,0 +1,13 @@
+../Core/Src/console.c:21:13:reply	16	static
+../Core/Src/console.c:27:13:reply_result	16	static
+../Core/Src/console.c:32:13:parse_unsigned	24	static
+../Core/Src/console.c:48:16:tokenize	24	static
+../Core/Src/console.c:71:13:report_status	120	static
+../Core/Src/console.c:83:13:set_mode	16	static
+../Core/Src/console.c:96:13:set_timeout	24	static
+../Core/Src/console.c:103:13:set_interrupts	16	static
+../Core/Src/console.c:116:13:execute_set	16	static
+../Core/Src/console.c:129:13:execute_line	32	static
+../Core/Src/console.c:150:13:process_char	16	static
+../Core/Src/console.c:174:6:console_init	4	static
+../Core/Src/console.c:180:6:console_update	16	static

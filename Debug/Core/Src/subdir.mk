@@ -6,6 +6,9 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/button.c \
+../Core/Src/byte_queue.c \
+../Core/Src/console.c \
+../Core/Src/gpio.c \
 ../Core/Src/gpio_driver.c \
 ../Core/Src/led.c \
 ../Core/Src/main.c \
@@ -14,10 +17,14 @@ C_SRCS += \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f4xx.c \
-../Core/Src/traffic_light.c 
+../Core/Src/traffic_light.c \
+../Core/Src/uart_driver.c 
 
 OBJS += \
 ./Core/Src/button.o \
+./Core/Src/byte_queue.o \
+./Core/Src/console.o \
+./Core/Src/gpio.o \
 ./Core/Src/gpio_driver.o \
 ./Core/Src/led.o \
 ./Core/Src/main.o \
@@ -26,10 +33,14 @@ OBJS += \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f4xx.o \
-./Core/Src/traffic_light.o 
+./Core/Src/traffic_light.o \
+./Core/Src/uart_driver.o 
 
 C_DEPS += \
 ./Core/Src/button.d \
+./Core/Src/byte_queue.d \
+./Core/Src/console.d \
+./Core/Src/gpio.d \
 ./Core/Src/gpio_driver.d \
 ./Core/Src/led.d \
 ./Core/Src/main.d \
@@ -38,7 +49,8 @@ C_DEPS += \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f4xx.d \
-./Core/Src/traffic_light.d 
+./Core/Src/traffic_light.d \
+./Core/Src/uart_driver.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -48,7 +60,7 @@ Core/Src/%.o Core/Src/%.su: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/button.d ./Core/Src/button.o ./Core/Src/button.su ./Core/Src/gpio_driver.d ./Core/Src/gpio_driver.o ./Core/Src/gpio_driver.su ./Core/Src/led.d ./Core/Src/led.o ./Core/Src/led.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/traffic_light.d ./Core/Src/traffic_light.o ./Core/Src/traffic_light.su
+	-$(RM) ./Core/Src/button.d ./Core/Src/button.o ./Core/Src/button.su ./Core/Src/byte_queue.d ./Core/Src/byte_queue.o ./Core/Src/byte_queue.su ./Core/Src/console.d ./Core/Src/console.o ./Core/Src/console.su ./Core/Src/gpio.d ./Core/Src/gpio.o ./Core/Src/gpio.su ./Core/Src/gpio_driver.d ./Core/Src/gpio_driver.o ./Core/Src/gpio_driver.su ./Core/Src/led.d ./Core/Src/led.o ./Core/Src/led.su ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su ./Core/Src/traffic_light.d ./Core/Src/traffic_light.o ./Core/Src/traffic_light.su ./Core/Src/uart_driver.d ./Core/Src/uart_driver.o ./Core/Src/uart_driver.su
 
 .PHONY: clean-Core-2f-Src
 

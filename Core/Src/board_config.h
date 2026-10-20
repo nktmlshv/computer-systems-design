@@ -19,4 +19,16 @@
 #define BUTTON_ACTIVE_LEVEL   false
 #define BUTTON_PULL           PIN_PULL_UP
 
+#define UART_INSTANCE         USART6
+#define UART_IRQ_NUMBER       USART6_IRQn
+#define UART_IRQ_HANDLER      USART6_IRQHandler
+#define UART_IRQ_PRIORITY     0U
+#define UART_BAUD_RATE        57600U
+#define UART_CLOCK_ENABLE()   (RCC->APB2ENR |= RCC_APB2ENR_USART6EN)
+#define UART_CLOCK_FREQ()     HAL_RCC_GetPCLK2Freq()
+
+#define UART_PINS_PORT        GPIOC
+#define UART_PINS             (GPIO_PIN_6 | GPIO_PIN_7)
+#define UART_PINS_ALT_FUNC    8U
+
 #endif
